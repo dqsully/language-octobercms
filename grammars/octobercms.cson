@@ -44,7 +44,7 @@
     #   '0':
     #     'name': 'punctuation.section.embedded.begin.php'
     # 'contentName': 'source.php'
-    'end': '^==\s*$'
+    'end': '(^==\s*$)|^(?=\\{#\\s*#\\})'
     # 'endCaptures':
     #   '0':
     #     'name': 'punctuation.section.embedded.end.php'
@@ -55,9 +55,5 @@
         'include': 'text.html.php#language'
       }
     ]
-  }
-  {
-    'name': 'keyword.other.separator.octobercms'
-    'match': '^==\s*$'
   }
 ]
