@@ -1,0 +1,63 @@
+'scopeName': 'source.octobercms'
+'fileTypes': [
+  'htm'
+]
+'name': 'October CMS Template'
+'firstLineMatch': '^;;\\s*$'
+'patterns': [
+  {
+    'name': 'meta.ini.octobercms'
+    'begin': ';;'
+    'beginCaptures':
+      '0':
+        'name': 'comment.line.begin.ini.octobercms'
+    'patterns': [
+      {
+        'include': 'source.ini'
+      }
+    ]
+    'end': '^(?===\s*$)'
+    # 'endCaptures':
+    #   '0':
+    #     'name': 'keyword.other.separator.octobercms'
+  }
+  {
+    'name': 'meta.html.twig.octobercms'
+    'begin': '\\{#\\s*#\\}'
+    'beginCaptures':
+      '0':
+        'name': 'comment.line.begin.twig.octobercms'
+    'patterns': [
+      {
+        'include': 'source.twig'
+      }
+      {
+        'include': 'text.html.basic'
+      }
+    ]
+    'end': ''
+  }
+  {
+    'name': 'meta.php.octobercms'
+    'begin': '==\s*$'
+    # 'beginCaptures':
+    #   '0':
+    #     'name': 'punctuation.section.embedded.begin.php'
+    # 'contentName': 'source.php'
+    'end': '^==\s*$'
+    # 'endCaptures':
+    #   '0':
+    #     'name': 'punctuation.section.embedded.end.php'
+    #   '1':
+    #     'name': 'source.php'
+    'patterns': [
+      {
+        'include': 'text.html.php#language'
+      }
+    ]
+  }
+  {
+    'name': 'keyword.other.separator.octobercms'
+    'match': '^==\s*$'
+  }
+]

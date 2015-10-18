@@ -1,0 +1,19 @@
+{
+  "name": "language-octobercms",
+  "main": "./lib/language-octobercms",
+  "version": "0.0.0",
+  "description": "Language support for October CMS's template file syntax.",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "language-octobercms:toggle"
+  },
+  "repository": "https://github.com/dqsully/language-octobercms",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "php-twig": "^4.0.0"
+  }
+}
