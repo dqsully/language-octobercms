@@ -17,9 +17,6 @@
       }
     ]
     'end': '^(?===\s*$)'
-    # 'endCaptures':
-    #   '0':
-    #     'name': 'keyword.other.separator.octobercms'
   }
   {
     'name': 'meta.html.twig.octobercms'
@@ -40,16 +37,7 @@
   {
     'name': 'meta.php.octobercms'
     'begin': '==\s*$'
-    # 'beginCaptures':
-    #   '0':
-    #     'name': 'punctuation.section.embedded.begin.php'
-    # 'contentName': 'source.php'
     'end': '(^==\s*$)|^(?=\\{#\\s*#\\}$)'
-    # 'endCaptures':
-    #   '0':
-    #     'name': 'punctuation.section.embedded.end.php'
-    #   '1':
-    #     'name': 'source.php'
     'patterns': [
       {
         'include': 'text.html.php#language'
