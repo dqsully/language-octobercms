@@ -1,7 +1,7 @@
 {
   "name": "language-octobercms",
   "main": "./lib/language-octobercms",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Language support for October CMS's template file syntax.",
   "keywords": [],
   "activationCommands": {
