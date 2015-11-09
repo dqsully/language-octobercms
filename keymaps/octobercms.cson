@@ -1,2 +1,2 @@
-'atom-text-editor[data-grammar="text html octobercms"]:not([mini])':
+'html.emmet atom-text-editor[data-grammar="text html octobercms"]:not([mini])':
   'tab': 'emmet:expand-abbreviation-with-tab'
