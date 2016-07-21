@@ -1,6 +1,6 @@
 {
   "name": "language-octobercms",
-  "main": "./lib/extdetect",
+  "main": "./lib/main",
   "version": "1.2.0",
   "description": "Language support for October CMS's template file syntax.",
   "keywords": [],
@@ -8,5 +8,8 @@
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "underscore-plus": "1.x"
   }
 }
