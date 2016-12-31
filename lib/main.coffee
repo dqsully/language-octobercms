@@ -1,22 +1,27 @@
+# coffeelint: disable=max_line_length
 {CompositeDisposable} = require 'atom'
 
-TwigMatcher = null
+TwigMatcher = require './twig-matcher'
+
 
 module.exports =
   activate: ->
     @subscriptions = new CompositeDisposable
+    subs = @subscriptions
 
-    @subscriptions.add atom.workspace.observeTextEditors (editor) ->
-      editorElement = atom.views.getView(editor)
+    @subscriptions.add atom.packages.onDidActivatePackage (pkg) ->
+      if pkg.name is 'bracket-matcher'
+        # Make sure that the bracket-matcher package gets first-dibs
+        subs.add atom.workspace.observeTextEditors (editor) ->
+          editorElement = atom.views.getView(editor)
 
-      # TwigMatcher ?= require './twig-matcher'
-      # new TwigMatcher(editor, editorElement)
+          new TwigMatcher(editor, editorElement)
+      else if pkg.name is 'emmet'
+        document.documentElement.classList.add 'emmet'
 
-    @subscriptions.add atom.packages.onDidActivatePackage(@test)
-    @subscriptions.add atom.packages.onDidDeactivatePackage(@test)
+    @subscriptions.add atom.packages.onDidDeactivatePackage (pkg) ->
+      if pkg.name is 'emmet'
+        document.documentElement.classList.remove 'emmet'
 
   deactivate: ->
     @subscriptions.dispose()
-
-  test: ->
-    document.documentElement.classList[if atom.packages.isPackageActive('emmet') then 'add' else 'remove'] 'emmet'
