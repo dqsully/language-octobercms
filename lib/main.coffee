@@ -19,6 +19,13 @@ module.exports =
       else if pkg.name is 'emmet'
         document.documentElement.classList.add 'emmet'
 
+    if atom.packages.getActivePackage 'bracket-matcher'
+      # Make sure that the bracket-matcher package gets first-dibs
+      subs.add atom.workspace.observeTextEditors (editor) ->
+        editorElement = atom.views.getView(editor)
+
+        new TwigMatcher(editor, editorElement)
+
     @subscriptions.add atom.packages.onDidDeactivatePackage (pkg) ->
       if pkg.name is 'emmet'
         document.documentElement.classList.remove 'emmet'
