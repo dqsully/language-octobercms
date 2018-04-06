@@ -1,7 +1,7 @@
 {
   "name": "language-octobercms",
   "main": "./lib/main",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Language support for October CMS's template file syntax.",
   "keywords": [],
   "repository": "https://github.com/dqsully/language-octobercms",
