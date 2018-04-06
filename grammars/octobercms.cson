@@ -355,10 +355,10 @@
     'name': 'source.php.octobercms'
     'begin': '==\\s*$'
     'end': '(^==\\s*$)|^(?=\\{#\\s*#\\}$)'
+    'contentName': 'source.php'
     'patterns': [
       {
-        'scopeName': 'text.html.php'
-        'include': 'text.html.php#language'
+        'include': 'source.php'
       }
     ]
   }
